@@ -8,11 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      colors: {
+        midnightExpresso: '#040405',
+        deepSpace: '#09090B',
+        skyBlaze: '#0E5CFF',
+        oceanLight: '#0E7CFF',
+        silveryMoon: '#D8D8D8',
+        sunsetOrange: '#FFA500',
+        polarWhite: '#FFFFFF'
+      }
     },
   },
   plugins: [],
