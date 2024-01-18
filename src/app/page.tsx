@@ -1,11 +1,10 @@
-import Header from "@/components/Header"
+import Introduction from "./sections/Introduction";
 
 export default function Home() {
   return (
     <>
-      <Header />
       <main>
-        
+        <Introduction />
       </main>
     </>
   )

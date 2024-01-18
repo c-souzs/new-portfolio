@@ -1,15 +1,19 @@
 import './globals.css'
 
-import { Poppins, Roboto } from "next/font/google"
+import { Inter, Roboto } from "next/font/google"
 
-const roboto = Roboto({
+import Header from '@/components/Header'
+
+export const roboto = Roboto({
   weight: ['400', '500', '700'],
   subsets: ['latin'],
+  fallback: ['sans-serif']
 })
 
-const poppins = Poppins({
+export const inter = Inter({
   weight: ['400', '500', '600'],
   subsets: ['latin'],
+  fallback: ['sans-serif']
 })
 
 // export const metadata: Metadata = {
@@ -24,7 +28,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} ${roboto.className}`}>{children}</body>
+      <body className={inter.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
