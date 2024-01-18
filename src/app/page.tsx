@@ -1,3 +1,4 @@
+import About from "./sections/About";
 import Introduction from "./sections/Introduction";
 
 export default function Home() {
@@ -5,6 +6,7 @@ export default function Home() {
     <>
       <main>
         <Introduction />
+        <About />
       </main>
     </>
   )

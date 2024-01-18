@@ -1,17 +1,13 @@
 import classNames from "classnames";
 import Link from "next/link";
-import { IconType } from "react-icons";
 
 interface LinkAnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>  {
   children: React.ReactNode;
-  icon?: IconType;
   to: string;
   typeStyle: 'primary' | 'secondary' | 'tertiary';
 }
 
-export default function LinkAnchor({ children, icon, to, typeStyle, ...props }: LinkAnchorProps) {
-  const Icon = icon;
-
+export default function LinkAnchor({ children, to, typeStyle, ...props }: LinkAnchorProps) {
   return (
     <Link 
       href={to} 
@@ -26,7 +22,6 @@ export default function LinkAnchor({ children, icon, to, typeStyle, ...props }: 
       {...props}
     >
       { children }
-      { Icon && <Icon size={16} color="#FFF"/>}
     </Link>
   )
 }

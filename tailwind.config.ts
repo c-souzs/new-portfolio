@@ -34,7 +34,10 @@ const config: Config = {
       },
       backgroundImage: {
         'blur-avatar': "url('/blur-profile-avatar.svg')",
-      }
+      },
+      boxShadow: {
+        'icon-social': '0 0 5px #0E7CFF',
+      },
     },
   },
   plugins: [],

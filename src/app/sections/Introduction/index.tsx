@@ -28,20 +28,20 @@ export default function Introduction() {
           <div className="flex flex-wrap gap-x-8 gap-y-4">
             <Button
               typeStyle="primary" 
-              icon={HiDownload}
               aria-label="Botão para baixar o currículo do autor do web site."
             >
               Baixar cv
+              <HiDownload size={16} color="#FFF" />
             </Button>
             <LinkAnchor
-              to={contactsLinks.linkedin}
+              to={contactsLinks.linkedin.url}
               typeStyle="secondary" 
-              icon={SiLinkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visite meu perfil no LinkedIn"
             >
               Linkedin
+              <SiLinkedin size={16} color="#FFF" />
             </LinkAnchor>
           </div>
         </section>
@@ -49,7 +49,7 @@ export default function Introduction() {
           <div className="w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-blur-avatar bg-no-repeat bg-cover bg-center flex justify-center items-center">
             <img 
               src="/profile-avatar.png" 
-              alt={titleImageAvatar}
+              alt="Avatar do autor do web site"
               title={titleImageAvatar}
               aria-label={titleImageAvatar} />
           </div>

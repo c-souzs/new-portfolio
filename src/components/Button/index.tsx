@@ -1,15 +1,11 @@
 import classNames from "classnames";
-import { IconType } from "react-icons";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  icon?: IconType;
   typeStyle: 'primary' | 'secondary';
 }
 
-export default function Button({ children, icon, typeStyle, ...props }: ButtonProps) {
-  const Icon = icon;
-
+export default function Button({ children, typeStyle, ...props }: ButtonProps) {
   return (
     <button 
       className={
@@ -21,7 +17,6 @@ export default function Button({ children, icon, typeStyle, ...props }: ButtonPr
       {...props}
     >
       {children}
-      {Icon && <Icon size={16} color="#FFF"/>}
     </button>
   )
 }
