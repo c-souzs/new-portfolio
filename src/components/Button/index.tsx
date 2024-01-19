@@ -10,7 +10,7 @@ export default function Button({ children, typeStyle, ...props }: ButtonProps) {
     <button 
       className={
         classNames(
-          "rounded-3xl px-8 py-2 text-base text-white border border-oceanLight flex items-center gap-3 transition-colors hover:bg-skyBlaze hover:border-skyBlaze focus:bg-skyBlaze focus:border-skyBlaze",
+          "rounded-3xl px-8 py-2 text-base text-white border border-oceanLight flex items-center gap-3 transition-colors hover:bg-skyBlaze hover:border-skyBlaze focus:bg-skyBlaze focus:border-skyBlaze focus:outline-none",
           {"bg-oceanLight": typeStyle === 'primary'},
           {"bg-transparent": typeStyle === 'secondary'}
         )}

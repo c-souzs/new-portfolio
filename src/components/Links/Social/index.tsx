@@ -12,7 +12,7 @@ export default function LinkSocial({ children, to, ...props }: LinkSocialProps) 
     <Link 
       href={isEmail ? `mailto:${to}` : to}
       target="_blank"
-      className="block text-oceanLight bg-deepSpace rounded-full p-3 transition-shadow hover:shadow-icon-social hover:text-skyBlaze focus:shadow-icon-social focus:text-skyBlaze"
+      className="block text-oceanLight bg-deepSpace rounded-full p-3 transition-shadow hover:shadow-icon-social hover:text-skyBlaze focus:shadow-icon-social focus:text-skyBlaze focus:outline-none"
       {...props} >
       { children }
     </Link>

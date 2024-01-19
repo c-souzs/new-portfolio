@@ -46,13 +46,12 @@ export default function Introduction() {
           </div>
         </section>
         <div className="justify-end hidden md:flex">
-          <div className="w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-blur-avatar bg-no-repeat bg-cover bg-center flex justify-center items-center">
             <img 
               src="/profile-avatar.png" 
+              className="w-[300px] h-[300px] lg:w-[350px] lg:h-[350px]"
               alt="Avatar do autor do web site"
               title={titleImageAvatar}
               aria-label={titleImageAvatar} />
-          </div>
         </div>
       </div>
     </div>

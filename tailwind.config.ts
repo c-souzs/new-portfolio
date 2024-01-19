@@ -32,9 +32,6 @@ const config: Config = {
       animation: {
         'wave': 'wave-animation 2.1s infinite',
       },
-      backgroundImage: {
-        'blur-avatar': "url('/blur-profile-avatar.svg')",
-      },
       boxShadow: {
         'icon-social': '0 0 5px #0E7CFF',
       },

@@ -32,7 +32,7 @@ export default function Header() {
                 return (
                   <li key={`nav-item-#${href}`}>
                     <Link href={href} 
-                      className="relative after:absolute after:w-0 after:h-0.5 after:bg-skyBlaze after:block after:rounded-full after:mt-1 after:duration-300 hover:after:w-full focus:after:w-full">
+                      className="relative after:absolute after:w-0 after:h-0.5 after:bg-skyBlaze after:block after:rounded-full after:mt-1 after:duration-300 hover:after:w-full focus:after:w-full focus:outline-none">
                       {name}
                     </Link>
                   </li>

@@ -1,6 +1,5 @@
 import { roboto } from "@/app/layout";
 import LinkSocial from "@/components/Links/Social";
-import Social from "@/components/Links/Social";
 import Title from "@/components/Title";
 import contactsLinks from "@/utils/contacts";
 import trainings from "@/utils/trainings";
@@ -30,7 +29,11 @@ export default function About() {
                       const Icon = linkData.icon;
 
                       return (
-                        <LinkSocial to={linkData.url} rel="noopener noreferrer">
+                        <LinkSocial 
+                          to={linkData.url} 
+                          rel="noopener noreferrer"
+                          title="Link para contato via rede sociais"
+                          aria-label="Link para contato via rede sociais">
                           <Icon size={18} color="currentColor"/>
                         </LinkSocial>
                       )
@@ -38,7 +41,8 @@ export default function About() {
                   }
                 </ul>
               </div>
-              <div className={classNames("flex-[3] flex flex-col gap-y-3", roboto.className)} aria-label="Descrição sobre quem sou, jornada de estudos, formação e objetivos.">
+              <div 
+                className={classNames("flex-[3] flex flex-col gap-y-3", roboto.className)} aria-label="Descrição sobre quem sou, jornada de estudos, formação e objetivos.">
                 <p>Prazer, meu nome é Caio Henrique de Souza. Tenho 20 anos e atualmente moro em Lavras, MG. Sou desenvolvedor front-end, entusiasta do desenvolvimento web, técnico em informática pelo IFMG e cursando Sistemas de Informação.</p>
                 <p>Durante minha jornada de estudos, tive a oportunidade de realizar projetos desafiadores para aplicar minhas habilidades. Entre eles, destaco uma dashboard administrativa e um sistema online com a integração de uma API de pagamentos. Esses projetos me permitiram evoluir minhas habilidades em tecnologias como JavaScript, Typescript, React, Next.js, Styled Components, Redux e GraphQL. Como resultado, aprimorei meus conhecimentos em JavaScript e adotei boas práticas de programação avançadas.</p>
                 <p>Meus planos são me tornar um desenvolvedor full-stack e dominar as principais tecnologias da melhor linguagem, o JavaScript. Estou sempre pronto para enfrentar novos desafios e buscar novas oportunidades para aprimorar minhas habilidades 💪🏻</p>
