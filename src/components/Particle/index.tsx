@@ -26,7 +26,7 @@ export default function Particle() {
       interactivity: {
         events: {
           onClick: {
-            enable: true,
+            enable: false,
             mode: "push",
           },
         },
@@ -65,7 +65,7 @@ export default function Particle() {
           density: {
             enable: true,
           },
-          value: 100,
+          value: 150,
         },
         opacity: {
           value: 0.1,

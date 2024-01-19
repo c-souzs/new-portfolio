@@ -34,6 +34,7 @@ const config: Config = {
       },
       boxShadow: {
         'icon-social': '0 0 5px #0E7CFF',
+        'button-active-slide': '0 0 5px 2px #0E7CFF',
       },
     },
   },

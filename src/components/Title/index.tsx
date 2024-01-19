@@ -1,11 +1,14 @@
+import classNames from "classnames";
+
 interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
   text: string;
+  hasMarginBottom?: boolean;
 }
 
-export default function Title({ text, ...props }: TitleProps) {
+export default function Title({ text, hasMarginBottom = false, ...props }: TitleProps) {
   return (
     <h2
-      className="text-2xl text-white font-medium mb-10 flex items-center gap-2 before:w-4 before:h-1 before:bg-oceanLight before:inline-block before:rounded"
+      className={classNames("text-2xl text-white font-medium flex items-center gap-2 before:w-4 before:h-1 before:bg-oceanLight before:inline-block before:rounded", {"mb-10": hasMarginBottom})}
       {...props}
     >
       { text }

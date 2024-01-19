@@ -28,7 +28,8 @@ export default function Introduction() {
           <div className="flex flex-wrap gap-x-8 gap-y-4">
             <Button
               typeStyle="primary" 
-              aria-label="Botão para baixar o currículo do autor do web site."
+              title="Baixe meu currículo em PDF"
+              aria-label="Baixe meu currículo em PDF"
             >
               Baixar cv
               <HiDownload size={16} color="#FFF" />
@@ -38,6 +39,7 @@ export default function Introduction() {
               typeStyle="secondary" 
               target="_blank"
               rel="noopener noreferrer"
+              title="Visite meu perfil no LinkedIn"
               aria-label="Visite meu perfil no LinkedIn"
             >
               Linkedin

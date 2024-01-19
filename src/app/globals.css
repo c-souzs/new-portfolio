@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-img {
-  z-index: 999;
+img, button, a {
+  position: relative;
+  z-index: 900;
 }

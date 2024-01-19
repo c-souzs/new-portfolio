@@ -14,7 +14,7 @@ export default function About() {
       <div className="h-full max-w-7xl mx-auto px-6 py-14 md:px-8">
 
         <section className="mb-14 text-white-100">
-            <Title text="Sobre mim" />
+            <Title text="Sobre mim" hasMarginBottom/>
             <div className="flex items-center gap-7">
               <div className="flex-1 mb-4 flex flex-col items-center">
                 <img 
@@ -50,9 +50,9 @@ export default function About() {
             </div>
         </section>
         <section>
-          <h2 className="text-white font-medium mb-10 flex items-center gap-2 before:w-4 before:h-1 before:bg-sunsetOrange before:inline-block before:rounded">
+          <h3 className="text-white font-medium mb-10 flex items-center gap-2 before:w-4 before:h-1 before:bg-sunsetOrange before:inline-block before:rounded">
             Formação e cursos
-          </h2>
+          </h3>
           <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" aria-label="Lista de cursos e formações realizadas">
               {
                   trainings.map(({title, school, yearStart, yearEnd}, index) => {
