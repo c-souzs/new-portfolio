@@ -6,3 +6,8 @@ img, button, a {
   position: relative;
   z-index: 900;
 }
+
+.active-slide-item {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}

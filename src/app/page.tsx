@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <ParticleElement />
-      <main>
+      <main className="overflow-hidden">
         <Introduction />
         <About />
         <Projects />

@@ -1,13 +1,11 @@
 "use client"
 
-import LinkBlank from "@/components/Links/Blank";
-import LinkAnchor from "@/components/Links/Link";
 import Title from "@/components/Title";
 import { useState } from "react";
-import { SiGithub } from "react-icons/si";
 import ControlTypeProjects from "./ControlType";
 import { front } from "@/utils/projects";
 import CardProject from "./Card";
+import Slide from "@/components/Slide";
 
 export type TypeFilterProjects = "FRONT" | "BACK";
 
@@ -27,7 +25,7 @@ export default function Projects() {
             typeFilterProjects={typeFilterProjects}
             setTypeFilterProjects={setTypeFilterProjects} />
 
-          <div className="flex flex-col gap-14">
+          <Slide>
             {
               front.map((project, index) => {
                 return (
@@ -35,7 +33,7 @@ export default function Projects() {
                 )
               })
             }
-          </div>
+          </Slide>
         </section>
       </div>
     </div>

@@ -23,23 +23,6 @@ export default function Particle() {
   const options: ISourceOptions = useMemo(
     () => ({
       fpsLimit: 120,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: false,
-            mode: "push",
-          },
-        },
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
-          },
-        },
-      },
       particles: {
         color: {
           value: "#0E5CFF",
@@ -65,7 +48,7 @@ export default function Particle() {
           density: {
             enable: true,
           },
-          value: 150,
+          value: 200,
         },
         opacity: {
           value: 0.1,

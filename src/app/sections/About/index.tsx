@@ -30,6 +30,7 @@ export default function About() {
 
                       return (
                         <LinkSocial 
+                        key={`social-${linkData}`}
                           to={linkData.url} 
                           rel="noopener noreferrer"
                           title="Link para contato via rede sociais"

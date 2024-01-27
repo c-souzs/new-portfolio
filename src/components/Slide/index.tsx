@@ -1,0 +1,159 @@
+import classNames from "classnames";
+import { useEffect, useRef, useState } from "react"
+
+interface SlideProps {
+  children: React.ReactNode
+}
+
+export default function Slide({ children }: SlideProps) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const containerSlide = useRef<HTMLDivElement>(null);
+  const [slideElements, setSlideElements] = useState<{
+    element: HTMLDivElement,
+    position: number,
+  }[]
+  >([]);
+  const slideIndexs = useRef({
+    prev: -1,
+    active: 0,
+    next: 1
+  }); 
+
+  const positionInit = useRef(0);
+  const positionFinal = useRef(0);
+  const movement = useRef(0);
+  const distanceRefValue = useRef(0);
+  const [distance, setDistance] = useState(0);
+
+  const [moving, setMoving] = useState(false);
+
+  function onStart(event: MouseEvent) {
+    event.preventDefault();
+
+    positionInit.current = event.clientX;
+
+    wrapperRef.current?.addEventListener("mousemove", onMove);
+  }
+
+  function onMove(event: MouseEvent) {
+    const movementReal = (positionInit.current - event.clientX) * 1.2;
+    movement.current = movementReal;
+    const movementValue = positionFinal.current - movementReal;
+    
+    distanceRefValue.current = movementValue;
+    setDistance(movementValue);
+    setMoving(true);
+  }
+
+  function onEnd() {
+    positionFinal.current = distanceRefValue.current;
+
+    changeSlideOnEnd();
+
+    wrapperRef.current?.removeEventListener("mousemove", onMove);
+  }
+
+  function updateIndexs(index: number) {
+    const last = slideElements.length - 1;
+
+    slideIndexs.current = {
+      prev: index ? index - 1 : -1,
+      active: index,
+      next: index === last ? -1 : index + 1,
+    }
+  }
+
+  function changeSlideByIndex(index: number) {
+    const slideItem = slideElements[index];
+    const slideActive = slideElements[slideIndexs.current.active];
+
+    if(!slideItem) return;
+
+    slideActive.element.classList.remove("active-slide-item");
+    slideItem.element.classList.add("active-slide-item");
+
+    const distance = slideItem.position;
+    setDistance(distance);
+  
+    updateIndexs(index);
+
+    positionFinal.current = distance;
+  }
+
+  function changeSlideOnEnd() {
+    if(movement.current > 200 && slideIndexs.current.next >= 0) {
+      changeSlideByIndex(slideIndexs.current.next);
+    } else if (movement.current < -200 && slideIndexs.current.prev >= 0) {
+      changeSlideByIndex(slideIndexs.current.prev);
+    } else {
+      changeSlideByIndex(slideIndexs.current.active);
+    }
+
+    setMoving(false);
+  }
+
+  useEffect(() => {
+    if(containerSlide.current && wrapperRef.current) {
+      const childrens = Array.from(containerSlide.current.children);
+      
+      const childrensSettings = childrens.map((element) => {
+        const elementDiv = element as HTMLDivElement;
+
+        const margin = (wrapperRef.current?.offsetWidth! - elementDiv.offsetWidth) / 2; 
+        const position = -(elementDiv.offsetLeft - margin);
+
+        return {
+          element: elementDiv,
+          position,
+        }
+      });
+      
+      changeSlideByIndex(0);
+
+      setSlideElements(childrensSettings);
+    }
+  }, [containerSlide.current, wrapperRef.current])
+
+  useEffect(() => {
+    if(wrapperRef.current) {
+      wrapperRef.current.addEventListener("mousedown", onStart);
+      wrapperRef.current.addEventListener("mouseup", onEnd);
+    }
+  }, [wrapperRef.current])
+
+  return (
+    <div ref={wrapperRef}>
+      {
+        slideElements.length > 0 && (
+          <div
+            className="flex gap-x-6 justify-center mb-12"
+          >
+            {
+              slideElements.map((_, index) => {
+                return (
+                  <button 
+                    className={classNames(
+                      "w-3 h-3 rounded-full bg-deepSpace shadow-button-active transition-colors hover:bg-skyBlaze focus:bg-skyBlaze focus:outline-none",
+                      {"bg-skyBlaze": index === slideIndexs.current.active}
+                    )}
+                    onClick={() => changeSlideByIndex(index)}
+                  />
+                )
+              })
+            }
+          </div>
+        )
+      }
+      <div 
+        className={classNames(
+          "flex gap-x-12",
+          {"transition-transform duration-300": !moving}
+          )} 
+        ref={containerSlide}
+        style={{transform: `translate3d(${distance}px, 0, 0)`}}
+        >
+        { children }
+      </div>
+    </div>
+  )
+}

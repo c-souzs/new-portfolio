@@ -11,9 +11,9 @@ interface CardProjectProps {
 export default function CardProject({ project }: CardProjectProps) {
   const { name, description, technologies, image, link, repository } = project
   return (
-    <div className="max-w-[1000px] mx-auto text-center">
+    <div className="w-[60vw] mx-auto text-center flex-shrink-0 transition-transform duration-500 opacity-80 scale-90">
       <h3 className="font-bold text-sunsetOrange uppercase text-3xl mb-2">{ name }</h3>
-      <ul className="flex flex-wrap justify-center gap-4 mt-4 mb-4 delaySmallReveal">
+      <ul className="flex flex-wrap justify-center gap-4 mt-4 mb-4">
             {
                 technologies.map((nameTech) => {
                     const Icon = globalTechnologies[nameTech].icon;

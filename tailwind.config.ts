@@ -33,7 +33,7 @@ const config: Config = {
         'wave': 'wave-animation 2.1s infinite',
       },
       boxShadow: {
-        'icon-social': '0 0 5px #0E7CFF',
+        'button-active': '0 0 5px #0E7CFF',
         'button-active-slide': '0 0 5px 2px #0E7CFF',
       },
     },
