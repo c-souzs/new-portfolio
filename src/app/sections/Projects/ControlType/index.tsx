@@ -18,6 +18,7 @@ export default function ControlTypeProjects({ typeFilterProjects, setTypeFilterP
         {"border-r-0 text-silveryMoon": typeFilterProjects === "BACK"})}
         onClick={() => setTypeFilterProjects("FRONT")}
         aria-label="Filtrar projetos front-end"
+        role="button"
         title="Filtrar projetos front-end"
         aria-pressed={typeFilterProjects === "FRONT"}>
           Front
@@ -29,6 +30,7 @@ export default function ControlTypeProjects({ typeFilterProjects, setTypeFilterP
         {"border-l-0 text-silveryMoon": typeFilterProjects === "FRONT"})}
         onClick={() => setTypeFilterProjects("BACK")}
         aria-label="Filtrar projetos back-end"
+        role="button"
         title="Filtrar projetos back-end"
         aria-pressed={typeFilterProjects === "BACK"}>
           Back

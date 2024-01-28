@@ -11,6 +11,7 @@ export default function LinkAnchor({ children, to, typeStyle, ...props }: LinkAn
   return (
     <Link 
       href={to} 
+      role="link"
       className={
         classNames(
           "transition-colors flex items-center gap-3 focus:outline-none",

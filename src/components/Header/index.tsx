@@ -30,18 +30,19 @@ export default function Header() {
   const [menuActive, setMenuActive] = useState(false);
 
   return (
-    <header className="bg-midnightExpresso text-white fixed z-[999] top-0 left-0 right-0">
+    <header className="bg-midnightExpresso text-white fixed z-[999] top-0 left-0 right-0" role="heading">
       <div className="h-24 max-w-7xl mx-auto px-6 flex justify-between items-center md:px-8">
         <Logo />
-        <nav aria-label="Menu principal">
+        <nav aria-label="Menu principal" role="navigation">
           <ul className={classNames(
             "text-white- md:flex md:justify-between md:items-center md:gap-x-12", 
             {"flex flex-col gap-y-8 absolute top-[100px] right-4 bg-deepSpace p-6 rounded shadow-bg-menu-mobile animate-right": menuActive}, 
-            {"hidden": !menuActive})}>
+            {"hidden": !menuActive})}
+            role="list">
             {
               navItems.map(({name, href}) => {
                 return (
-                  <li key={`nav-item-#${href}`}>
+                  <li key={`nav-item-#${href}`} role="listitem">
                     <Link href={href} 
                       className="relative after:absolute after:w-0 after:h-0.5 after:bg-skyBlaze after:block after:rounded-full after:mt-1 after:duration-300 hover:after:w-full focus:after:w-full focus:outline-none">
                       {name}

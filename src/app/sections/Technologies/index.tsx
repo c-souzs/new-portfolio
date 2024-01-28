@@ -7,7 +7,7 @@ const CardTechnologies = ({ icon, name }: {icon: IconType; name: string}) => {
   const Icon = icon;
 
   return (
-    <li className="group text-white uppercase font-semibold text-sm text-white-100 border border-skyBlaze rounded py-6 shadow-card-technologies transition-transform duration-200" >
+    <li className="group text-white uppercase font-semibold text-sm text-white-100 border border-skyBlaze rounded py-6 shadow-card-technologies transition-transform duration-200" role="listitem">
         <span className="flex flex-col items-center justify-center gap-2 opacity-70 transition-opacity group-hover:opacity-100">
             <Icon size={52}/>   
             <p className="max-w-[100px] font-poppins text-center">{ name }</p>     
@@ -27,15 +27,15 @@ export default function Technologies() {
         <Title text="Conhecimentos" hasMarginBottom/>
         <section>
           <SubTitle text="Front-end"/>
-          <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-6" role="list">
           {
-              technologiesFrontArray.map(({icon, name}, index) => <CardTechnologies key={`card-tech-item-back-${index}`} icon={icon} name={name}/>)
+              technologiesFrontArray.map(({icon, name}, index) => <CardTechnologies key={`card-tech-item-front-${index}`} icon={icon} name={name}/>)
             }
           </ul>
         </section>
         <section className="mt-12">
           <SubTitle text="Back-end"/>
-          <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-6" role="list">
             {
               technologiesBackArray.map(({icon, name}, index) => <CardTechnologies key={`card-tech-item-back-${index}`} icon={icon} name={name}/>)
             }

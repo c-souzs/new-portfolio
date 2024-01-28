@@ -12,6 +12,7 @@ export default function LinkBlank({ text, to, ...props }: LinkBlankProps) {
     <Link 
       href={to} 
       target="_blank"
+      role="link"
       rel="noopener noreferrer"
       className={
         classNames(

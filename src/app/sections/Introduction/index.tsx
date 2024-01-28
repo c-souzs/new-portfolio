@@ -1,8 +1,11 @@
+import classNames from "classnames";
 import { inter, roboto } from "@/app/fonts";
+
 import Button from "@/components/Button";
 import LinkAnchor from "@/components/Links/Link";
+
 import contactsLinks from "@/utils/contacts";
-import classNames from "classnames";
+
 import { HiDownload } from "react-icons/hi";
 import { SiLinkedin } from "react-icons/si";
 
@@ -12,7 +15,7 @@ export default function Introduction() {
   return (
     <div className="bg-midnightExpresso h-[calc(100vh-96px)] text-white">
       <div className="h-full max-w-7xl mx-auto px-6 grid grid-cols-1 items-center md:grid-cols-2 md:px-8">
-        <section>
+        <section aria-label="Minha apresentacao">
           <h3 className={classNames("text-silveryMoon", roboto.className)}>
             Olá, eu sou o {' '}
             <span className={classNames("inline-block text-xl text-white", inter.className)}>Caio Souza</span>
@@ -52,6 +55,7 @@ export default function Introduction() {
               src="/profile-avatar.png" 
               className="w-[300px] h-[300px] lg:w-[350px] lg:h-[350px]"
               alt="Avatar do autor do web site"
+              role="img"
               title={titleImageAvatar}
               aria-label={titleImageAvatar} />
         </div>

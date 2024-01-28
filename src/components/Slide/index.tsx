@@ -164,7 +164,7 @@ export default function Slide({ children }: SlideProps) {
   }, [wrapperRef.current])
 
   return (
-    <div ref={wrapperRef}>
+    <div ref={wrapperRef} role="slider">
       {
         slideElements.length > 0 && (
           <div

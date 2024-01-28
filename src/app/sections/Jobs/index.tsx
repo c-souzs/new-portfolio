@@ -1,7 +1,8 @@
+import { roboto } from "@/app/fonts";
+import classNames from "classnames";
+
 import Title from "@/components/Title";
 import { CardJob } from "./Card";
-import classNames from "classnames";
-import { roboto } from "@/app/fonts";
 
 export default function Jobs() {
   return (
@@ -14,10 +15,12 @@ export default function Jobs() {
           "mt-3 mb-12 text-silveryMoon",
           roboto.className
         )}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus temporibus ipsa nobis pariatur est distinctio doloribus itaque dolore consectetur excepturi! Tenetur nobis impedit amet velit deserunt corporis minima expedita ipsam.</p>
-        <section className="flex flex-col gap-6 md:gap-12" aria-label="Experiências profissional adquiridas por mim listadas de forma detalhada sobre os cargos que já ocupei.">
-          <CardJob />
-          <CardJob revert/>
-          <CardJob />
+        <section aria-label="Experiências profissional adquiridas por mim listadas de forma detalhada sobre os cargos que já ocupei.">
+          <div className="flex flex-col gap-6 md:gap-12">
+            <CardJob />
+            <CardJob revert/>
+            <CardJob />
+          </div>
         </section>
       </div>
     </div>

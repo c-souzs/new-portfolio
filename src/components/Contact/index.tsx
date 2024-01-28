@@ -5,21 +5,23 @@ export default function Contact({ bgButton }: {bgButton: "midnightExpresso" | "d
   const contactsLinksValues = Object.values(contactsLinks);
 
   return (
-    <ul className={"flex flex-wrap justify-center items-center gap-x-6"}>
+    <ul className={"flex flex-wrap justify-center items-center gap-x-6"} role="list">
       {
         contactsLinksValues.map((linkData) => {
           const Icon = linkData.icon;
 
           return (
-            <LinkSocial 
-              key={`social-${linkData}`}
-              to={linkData.url} 
-              rel="noopener noreferrer"
-              bg={bgButton}
-              title="Link para contato via rede sociais"
-              aria-label="Link para contato via rede sociais">
-              <Icon size={18} color="currentColor"/>
-            </LinkSocial>
+            <li role="listitem">
+              <LinkSocial 
+                key={`social-${linkData}`}
+                to={linkData.url} 
+                rel="noopener noreferrer"
+                bg={bgButton}
+                title="Link para contato via rede sociais"
+                aria-label="Link para contato via rede sociais">
+                <Icon size={18} color="currentColor"/>
+              </LinkSocial>
+            </li>
           )
         })
       }

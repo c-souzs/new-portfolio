@@ -13,6 +13,7 @@ export default function LinkSocial({ children, to, bg, ...props }: LinkSocialPro
   return (
     <Link 
       href={isEmail ? `mailto:${to}` : to}
+      role=""
       target="_blank"
       className={classNames(
         "block text-oceanLight rounded-full p-3 transition-shadow hover:shadow-button-active hover:text-skyBlaze focus:shadow-button-active focus:text-skyBlaze focus:outline-none",

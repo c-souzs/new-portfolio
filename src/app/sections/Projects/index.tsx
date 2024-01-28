@@ -1,19 +1,20 @@
 "use client"
 
 import { useState } from "react";
+import { roboto } from "@/app/fonts";
+import classNames from "classnames";
+
 import Title from "@/components/Title";
 import ControlTypeProjects from "./ControlType";
-import { front } from "@/utils/projects";
 import CardProject from "./Card";
 import Slide from "@/components/Slide";
-import classNames from "classnames";
-import { roboto } from "@/app/fonts";
+
+import { front } from "@/utils/projects";
 
 export type TypeFilterProjects = "FRONT" | "BACK";
 
 export default function Projects() {
   const [typeFilterProjects, setTypeFilterProjects] = useState<TypeFilterProjects>("FRONT");
-  
 
   return (
     <div className="bg-deepSpace text-white" id="projects">
