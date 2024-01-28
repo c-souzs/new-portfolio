@@ -3,6 +3,7 @@ import './globals.css'
 import { Inter, Roboto } from "next/font/google"
 
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const roboto = Roboto({
   weight: ['400', '500', '700'],
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Header />
         {children}
       </body>
+      <Footer />
     </html>
   )
 }
