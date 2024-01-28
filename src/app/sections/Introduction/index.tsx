@@ -1,4 +1,4 @@
-import { inter, roboto } from "@/app/layout";
+import { inter, roboto } from "@/app/fonts";
 import Button from "@/components/Button";
 import LinkAnchor from "@/components/Links/Link";
 import contactsLinks from "@/utils/contacts";

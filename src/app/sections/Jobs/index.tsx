@@ -1,7 +1,7 @@
 import Title from "@/components/Title";
 import { CardJob } from "./Card";
 import classNames from "classnames";
-import { roboto } from "@/app/layout";
+import { roboto } from "@/app/fonts";
 
 export default function Jobs() {
   return (

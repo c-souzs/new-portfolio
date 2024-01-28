@@ -7,7 +7,7 @@ import { front } from "@/utils/projects";
 import CardProject from "./Card";
 import Slide from "@/components/Slide";
 import classNames from "classnames";
-import { roboto } from "@/app/layout";
+import { roboto } from "@/app/fonts";
 
 export type TypeFilterProjects = "FRONT" | "BACK";
 

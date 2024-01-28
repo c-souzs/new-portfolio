@@ -1,4 +1,4 @@
-import { inter, roboto } from "@/app/layout";
+import { inter, roboto } from "@/app/fonts";
 import classNames from "classnames";
 import { PiBagSimple } from "react-icons/pi";
 

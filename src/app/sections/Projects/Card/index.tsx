@@ -1,4 +1,4 @@
-import { roboto } from "@/app/layout"
+import { roboto } from "@/app/fonts"
 import LinkBlank from "@/components/Links/Blank"
 import LinkAnchor from "@/components/Links/Link"
 import { Project } from "@/utils/projects"

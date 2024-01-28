@@ -1,13 +1,8 @@
-import contactsLinks from "@/utils/contacts";
-import Social from "../Links/Social";
 import Logo from "../Logo";
-import LinkSocial from "../Links/Social";
 import Contact from "../Contact";
 
 export default function Footer() {
   const date = new Date();
-
-  const contactsLinksValues = Object.values(contactsLinks);
 
   return (
     <footer className="bg-midnightExpresso relative z-50 text-silveryMoon">

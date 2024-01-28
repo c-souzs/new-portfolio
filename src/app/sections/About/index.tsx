@@ -1,6 +1,5 @@
-import { roboto } from "@/app/layout";
+import { roboto } from "@/app/fonts";
 import Contact from "@/components/Contact";
-import LinkSocial from "@/components/Links/Social";
 import SubTitle from "@/components/SubTitle";
 import Title from "@/components/Title";
 import contactsLinks from "@/utils/contacts";
@@ -9,7 +8,6 @@ import classNames from "classnames";
 
 export default function About() {
   const contactsLinksValues = Object.values(contactsLinks);
-  
   
   return (
     <div className="bg-deepSpace text-white" id="about">

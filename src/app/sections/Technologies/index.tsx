@@ -22,7 +22,7 @@ export default function Technologies() {
   const technologiesBackArray = Object.values(technologiesBack);
 
   return (
-    <div className="bg-deepSpace text-white" id="skills">
+    <div className="bg-midnightExpresso text-white" id="skills">
       <div className="h-full max-w-7xl mx-auto px-6 py-14 md:px-8">
         <Title text="Conhecimentos" hasMarginBottom/>
         <section>
