@@ -35,6 +35,7 @@ const config: Config = {
       boxShadow: {
         'button-active': '0 0 5px #0E7CFF',
         'button-active-slide': '0 0 5px 2px #0E7CFF',
+        'card-technologies': '4px 5px 4px 3px rgba(14, 124, 255, .137)',
       },
     },
   },

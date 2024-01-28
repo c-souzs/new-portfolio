@@ -1,5 +1,6 @@
 import { IconType } from 'react-icons';
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiStyledcomponents, SiRedux, SiGithub, SiJest, SiTestinglibrary, SiGraphql, } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiStyledcomponents, SiRedux, SiGithub, SiJest, SiTestinglibrary, SiGraphql, SiNodedotjs, SiPrisma, SiSpringboot, SiPostgresql, } from 'react-icons/si';
 
 export const technologiesFront = {
   html: {
@@ -59,7 +60,28 @@ export const technologiesFront = {
 
 export type NameTechnologyFront = keyof typeof technologiesFront;
 
-export const technologiesBack = {}
+export const technologiesBack = {
+  nodeJs: {
+      icon: SiNodedotjs,
+      name: 'nodeJs'
+  },
+  prismaJs: {
+      icon: SiPrisma,
+      name: 'prismaJs'
+  },
+  java: {
+      icon: FaJava,
+      name: 'java'
+  },
+  springBoot: {
+    icon: SiSpringboot,
+    name: 'spring boot'
+  },
+  postgreSQL: {
+    icon: SiPostgresql,
+    name: 'postgreSQL'
+  }
+}
 
 export type NameTechnologyBack = keyof typeof technologiesBack;
 

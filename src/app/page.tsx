@@ -4,6 +4,7 @@ import Introduction from "./sections/Introduction";
 import dynamic from "next/dynamic";
 import Projects from "./sections/Projects";
 import Jobs from "./sections/Jobs";
+import Technologies from "./sections/Technologies";
 
 const ParticleElement = dynamic(
   () => import('@/components/Particle'),
@@ -19,6 +20,7 @@ export default function Home() {
         <About />
         <Jobs />
         <Projects />
+        <Technologies />
       </main>
     </>
   )

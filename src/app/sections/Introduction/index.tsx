@@ -23,7 +23,7 @@ export default function Introduction() {
             Desenvolvedor Front-end na Agência Zetta, especializado em {' '}
             <span className="text-sunsetOrange">ReactJS, NextJS</span> {' '}
             e nas demais bibliotecas que compõem esse ecossistema. Atualmente, estou me especializando em {' '}
-            <span className="text-sunsetOrange">JAVA, Spring Boot e MySQL</span>.
+            <span className="text-sunsetOrange">JAVA, Spring Boot e PostgreSQL</span>.
           </p>
           <div className="flex flex-wrap gap-x-8 gap-y-4">
             <Button
