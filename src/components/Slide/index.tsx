@@ -35,8 +35,27 @@ export default function Slide({ children }: SlideProps) {
     wrapperRef.current?.addEventListener("mousemove", onMove);
   }
 
+  function onStartTouch(event: TouchEvent) {
+    event.preventDefault();
+
+    positionInit.current = event.changedTouches[0].clientX;
+
+    wrapperRef.current?.addEventListener("touchmove", onMoveTouch);
+  }
+
   function onMove(event: MouseEvent) {
     const movementReal = (positionInit.current - event.clientX) * 1.2;
+    movement.current = movementReal;
+    const movementValue = positionFinal.current - movementReal;
+    
+    distanceRefValue.current = movementValue;
+    setDistance(movementValue);
+    setMoving(true);
+  }
+
+  function onMoveTouch(event: TouchEvent) {
+    const clientX = event.changedTouches[0].clientX;
+    const movementReal = (positionInit.current - clientX) * 1.2;
     movement.current = movementReal;
     const movementValue = positionFinal.current - movementReal;
     
@@ -51,6 +70,14 @@ export default function Slide({ children }: SlideProps) {
     changeSlideOnEnd();
 
     wrapperRef.current?.removeEventListener("mousemove", onMove);
+  }
+
+  function onEndTouch() {
+    positionFinal.current = distanceRefValue.current;
+
+    changeSlideOnEnd();
+
+    wrapperRef.current?.removeEventListener("touchmove", onMoveTouch);
   }
 
   function updateIndexs(index: number) {
@@ -118,6 +145,21 @@ export default function Slide({ children }: SlideProps) {
     if(wrapperRef.current) {
       wrapperRef.current.addEventListener("mousedown", onStart);
       wrapperRef.current.addEventListener("mouseup", onEnd);
+
+      wrapperRef.current.addEventListener("touchstart", onStartTouch);
+      wrapperRef.current.addEventListener("touchend", onEndTouch);
+    }
+
+    return () => {
+      if(wrapperRef.current) {
+        wrapperRef.current.removeEventListener("mousedown", onStart);
+        wrapperRef.current.removeEventListener("mouseup", onEnd);
+        wrapperRef.current.removeEventListener("mousemove", onMove);
+
+        wrapperRef.current.removeEventListener("touchstart", onStartTouch);
+        wrapperRef.current.removeEventListener("touchend", onEndTouch);
+        wrapperRef.current.removeEventListener("touchmove", onMoveTouch);
+      }
     }
   }, [wrapperRef.current])
 
@@ -127,6 +169,7 @@ export default function Slide({ children }: SlideProps) {
         slideElements.length > 0 && (
           <div
             className="flex gap-x-6 justify-center mb-12"
+            role="navigation"
           >
             {
               slideElements.map((_, index) => {
@@ -136,6 +179,7 @@ export default function Slide({ children }: SlideProps) {
                       "w-3 h-3 rounded-full bg-deepSpace shadow-button-active transition-colors hover:bg-skyBlaze focus:bg-skyBlaze focus:outline-none",
                       {"bg-skyBlaze": index === slideIndexs.current.active}
                     )}
+                    aria-label="Botão para navegar entre os slides"
                     onClick={() => changeSlideByIndex(index)}
                   />
                 )
@@ -150,6 +194,7 @@ export default function Slide({ children }: SlideProps) {
           {"transition-transform duration-300": !moving}
           )} 
         ref={containerSlide}
+        role="group"
         style={{transform: `translate3d(${distance}px, 0, 0)`}}
         >
         { children }

@@ -28,7 +28,12 @@ export default function CardProject({ project }: CardProjectProps) {
             }
         </ul>
       <p className="mb-6">{ description }</p>
-      <img src={image} alt={name} className="rounded"/>
+      <img 
+        src={image} 
+        alt={name} 
+        title={name}
+        aria-label={name}
+        className="rounded"/>
       <div className="flex gap-x-6 justify-center mt-6">
         <LinkBlank 
           text="Visitar site" 
@@ -39,6 +44,8 @@ export default function CardProject({ project }: CardProjectProps) {
           to={repository} 
           typeStyle="tertiary"
           aria-label={`"Acesse o repositório do meu projeto ${name} e veja como ele foi desenvolvido"`}
+          target="_blank"
+          rel="noopener noreferrer"
           title={`"Acesse o repositório do meu projeto ${name} e veja como ele foi desenvolvido"`}>
           Repositório
           <SiGithub size={14} />
