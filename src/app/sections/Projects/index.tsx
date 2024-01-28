@@ -1,7 +1,7 @@
 "use client"
 
-import Title from "@/components/Title";
 import { useState } from "react";
+import Title from "@/components/Title";
 import ControlTypeProjects from "./ControlType";
 import { front } from "@/utils/projects";
 import CardProject from "./Card";
@@ -14,7 +14,7 @@ export default function Projects() {
   
 
   return (
-    <div className="bg-midnightExpresso text-white">
+    <div className="bg-deepSpace text-white">
       <div className="h-full max-w-7xl mx-auto px-6 py-14">
         <section className="mb-12">
           <Title text="Projetos" />

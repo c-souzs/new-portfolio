@@ -3,6 +3,7 @@ import About from "./sections/About";
 import Introduction from "./sections/Introduction";
 import dynamic from "next/dynamic";
 import Projects from "./sections/Projects";
+import Jobs from "./sections/Jobs";
 
 const ParticleElement = dynamic(
   () => import('@/components/Particle'),
@@ -16,6 +17,7 @@ export default function Home() {
       <main className="overflow-hidden">
         <Introduction />
         <About />
+        <Jobs />
         <Projects />
       </main>
     </>

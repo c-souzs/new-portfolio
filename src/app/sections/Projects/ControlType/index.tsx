@@ -7,7 +7,7 @@ interface ControlTypeProjectsProps {
 }
 
 export default function ControlTypeProjects({ typeFilterProjects, setTypeFilterProjects }: ControlTypeProjectsProps) {
-  const basicStyleButton = "uppercase bg-deepSpace transition border border-oceanLight px-8 py-3 hover:text-oceanLight hover:shadow-button-active-slide focus:text-oceanLight focus:shadow-button-active-slide focus:outline-none";
+  const basicStyleButton = "uppercase bg-midnightExpresso transition border border-oceanLight px-8 py-3 hover:text-oceanLight hover:shadow-button-active-slide focus:text-oceanLight focus:shadow-button-active-slide focus:outline-none";
 
   return (
     <div className="text-xl font-semibold w-full text-center mb-12">

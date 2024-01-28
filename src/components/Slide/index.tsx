@@ -1,5 +1,5 @@
-import classNames from "classnames";
 import { useEffect, useRef, useState } from "react"
+import classNames from "classnames";
 
 interface SlideProps {
   children: React.ReactNode
@@ -176,11 +176,12 @@ export default function Slide({ children }: SlideProps) {
                 return (
                   <button 
                     className={classNames(
-                      "w-3 h-3 rounded-full bg-deepSpace shadow-button-active transition-colors hover:bg-skyBlaze focus:bg-skyBlaze focus:outline-none",
+                      "w-3 h-3 rounded-full bg-midnightExpresso shadow-button-active transition-colors hover:bg-skyBlaze focus:bg-skyBlaze focus:outline-none",
                       {"bg-skyBlaze": index === slideIndexs.current.active}
                     )}
                     aria-label="Botão para navegar entre os slides"
                     onClick={() => changeSlideByIndex(index)}
+                    key={`button-nagivation-slide-${index}`}
                   />
                 )
               })
