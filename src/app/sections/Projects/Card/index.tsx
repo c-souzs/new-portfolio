@@ -1,7 +1,9 @@
+import { roboto } from "@/app/layout"
 import LinkBlank from "@/components/Links/Blank"
 import LinkAnchor from "@/components/Links/Link"
 import { Project } from "@/utils/projects"
 import globalTechnologies from "@/utils/technologies"
+import classNames from "classnames"
 import { SiGithub } from "react-icons/si"
 
 interface CardProjectProps {
@@ -11,7 +13,7 @@ interface CardProjectProps {
 export default function CardProject({ project }: CardProjectProps) {
   const { name, description, technologies, image, link, repository } = project
   return (
-    <div className="w-[60vw] mx-auto text-center flex-shrink-0 transition-transform duration-500 opacity-80 scale-90">
+    <div className="w-[80vw] mx-auto text-center flex-shrink-0 transition-transform duration-500 opacity-80 scale-90 lg:w-[60vw]">
       <h3 className="font-bold text-sunsetOrange uppercase text-3xl mb-2">{ name }</h3>
       <ul className="flex flex-wrap justify-center gap-4 mt-4 mb-4">
             {
@@ -27,7 +29,10 @@ export default function CardProject({ project }: CardProjectProps) {
                 })
             }
         </ul>
-      <p className="mb-6">{ description }</p>
+      <p className={classNames(
+        "mb-6",
+        roboto.className
+      )}>{ description }</p>
       <img 
         src={image} 
         alt={name} 

@@ -6,6 +6,8 @@ import ControlTypeProjects from "./ControlType";
 import { front } from "@/utils/projects";
 import CardProject from "./Card";
 import Slide from "@/components/Slide";
+import classNames from "classnames";
+import { roboto } from "@/app/layout";
 
 export type TypeFilterProjects = "FRONT" | "BACK";
 
@@ -14,11 +16,14 @@ export default function Projects() {
   
 
   return (
-    <div className="bg-deepSpace text-white">
-      <div className="h-full max-w-7xl mx-auto px-6 py-14">
+    <div className="bg-deepSpace text-white" id="projects">
+      <div className="h-full max-w-7xl mx-auto px-6 py-14 md:px-8">
         <section className="mb-12">
           <Title text="Projetos" />
-          <p className="mt-3 text-silveryMoon">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus temporibus ipsa nobis pariatur est distinctio doloribus itaque dolore consectetur excepturi! Tenetur nobis impedit amet velit deserunt corporis minima expedita ipsam.</p>
+          <p className={classNames(
+            "mt-3 text-silveryMoon",
+            roboto.className
+          )}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus temporibus ipsa nobis pariatur est distinctio doloribus itaque dolore consectetur excepturi! Tenetur nobis impedit amet velit deserunt corporis minima expedita ipsam.</p>
         </section>
         <section>
           <ControlTypeProjects 

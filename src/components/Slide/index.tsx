@@ -168,7 +168,7 @@ export default function Slide({ children }: SlideProps) {
       {
         slideElements.length > 0 && (
           <div
-            className="flex gap-x-6 justify-center mb-12"
+            className="flex gap-x-6 justify-center mb-8 lg:mb-12"
             role="navigation"
           >
             {
@@ -191,7 +191,7 @@ export default function Slide({ children }: SlideProps) {
       }
       <div 
         className={classNames(
-          "flex gap-x-12",
+          "flex gap-x-1 sm:gap-x-4 md:gap-x-6 lg:gap-x-12",
           {"transition-transform duration-300": !moving}
           )} 
         ref={containerSlide}

@@ -22,12 +22,12 @@ export default function Technologies() {
   const technologiesBackArray = Object.values(technologiesBack);
 
   return (
-    <div className="bg-deepSpace text-white">
-      <div className="h-full max-w-7xl mx-auto px-6 py-14">
-        <Title text="Tecnologias conhecida" hasMarginBottom/>
+    <div className="bg-deepSpace text-white" id="skills">
+      <div className="h-full max-w-7xl mx-auto px-6 py-14 md:px-8">
+        <Title text="Conhecimentos" hasMarginBottom/>
         <section>
           <SubTitle text="Front-end"/>
-          <ul className="grid grid-cols-6 gap-x-6 gap-y-6">
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
           {
               technologiesFrontArray.map(({icon, name}, index) => <CardTechnologies key={`card-tech-item-back-${index}`} icon={icon} name={name}/>)
             }
@@ -35,7 +35,7 @@ export default function Technologies() {
         </section>
         <section className="mt-12">
           <SubTitle text="Back-end"/>
-          <ul className="grid grid-cols-6 gap-x-6 gap-y-6">
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
             {
               technologiesBackArray.map(({icon, name}, index) => <CardTechnologies key={`card-tech-item-back-${index}`} icon={icon} name={name}/>)
             }

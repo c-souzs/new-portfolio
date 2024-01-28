@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <ParticleElement />
-      <main className="overflow-hidden">
+      <main className="overflow-hidden mt-24">
         <Introduction />
         <About />
         <Jobs />

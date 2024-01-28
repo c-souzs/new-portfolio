@@ -28,14 +28,21 @@ const config: Config = {
           '60%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(0deg)' },
         },
+        'right-animation': {
+          '0%': { transform: 'translateX(16px)', opacity: '.5' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
       },
       animation: {
         'wave': 'wave-animation 2.1s infinite',
+        right: 'right-animation .5s forwards',
       },
       boxShadow: {
         'button-active': '0 0 5px #0E7CFF',
         'button-active-slide': '0 0 5px 2px #0E7CFF',
         'card-technologies': '4px 5px 4px 3px rgba(14, 124, 255, .137)',
+        'menu-mobile': 'currentcolor 0px 7px, currentcolor 0px -7px',
+        'bg-menu-mobile': '#0E7CFF 0px 0px .25rem',
       },
     },
   },
