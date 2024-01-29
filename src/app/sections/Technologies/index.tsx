@@ -7,7 +7,7 @@ const CardTechnologies = ({ icon, name }: {icon: IconType; name: string}) => {
   const Icon = icon;
 
   return (
-    <li className="group text-white uppercase font-semibold text-sm text-white-100 border border-skyBlaze rounded py-6 shadow-card-technologies transition-transform duration-200" role="listitem">
+    <li className="group bg-midnightExpresso text-white uppercase font-semibold text-sm text-white-100 border border-skyBlaze rounded py-6 shadow-card-technologies transition-transform duration-200 relative z-[888]" role="listitem">
         <span className="flex flex-col items-center justify-center gap-2 opacity-70 transition-opacity group-hover:opacity-100">
             <Icon size={52}/>   
             <p className="max-w-[100px] font-poppins text-center">{ name }</p>     

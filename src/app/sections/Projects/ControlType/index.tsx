@@ -10,7 +10,7 @@ export default function ControlTypeProjects({ typeFilterProjects, setTypeFilterP
   const basicStyleButton = "uppercase bg-midnightExpresso transition border border-oceanLight px-8 py-3 hover:text-oceanLight hover:shadow-button-active-slide focus:text-oceanLight focus:shadow-button-active-slide focus:outline-none";
 
   return (
-    <div className="text-xl font-semibold w-full text-center mb-8 lg:mb-12">
+    <div className="text-xl font-semibold w-full text-center mb-12">
       <button className={
         classNames("pr-6 rounded-tl-[60px] rounded-bl-[60px]",
         basicStyleButton,

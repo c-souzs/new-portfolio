@@ -19,7 +19,7 @@ export default function CardProject({ project }: CardProjectProps) {
   return (
     <div className="w-[80vw] mx-auto text-center flex-shrink-0 transition-transform duration-500 opacity-80 scale-90 lg:w-[60vw]">
       <h3 className="font-bold text-sunsetOrange uppercase text-3xl mb-2">{ name }</h3>
-      <ul className="flex flex-wrap justify-center gap-4 mt-4 mb-4" role="list">
+      <ul className="hidden flex-wrap justify-center gap-4 mt-4 mb-4 md:flex" role="list">
             {
                 technologies.map((nameTech) => {
                     const Icon = globalTechnologies[nameTech].icon;
@@ -44,7 +44,7 @@ export default function CardProject({ project }: CardProjectProps) {
         title={name}
         aria-label={name}
         className="rounded"/>
-      <div className="flex gap-x-6 justify-center mt-6">
+      <div className="flex flex-wrap gap-6 justify-center mt-6">
         <LinkBlank 
           text="Visitar site" 
           to={link}

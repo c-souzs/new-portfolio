@@ -10,11 +10,14 @@ import CardProject from "./Card";
 import Slide from "@/components/Slide";
 
 import { front } from "@/utils/projects";
+import useScreenMobile from "@/hooks/useScreenMobile";
 
 export type TypeFilterProjects = "FRONT" | "BACK";
 
 export default function Projects() {
   const [typeFilterProjects, setTypeFilterProjects] = useState<TypeFilterProjects>("FRONT");
+  
+  const hasMobile = useScreenMobile();
 
   return (
     <div className="bg-deepSpace text-white" id="projects">
@@ -24,7 +27,9 @@ export default function Projects() {
           <p className={classNames(
             "mt-3 text-silveryMoon",
             roboto.className
-          )}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus temporibus ipsa nobis pariatur est distinctio doloribus itaque dolore consectetur excepturi! Tenetur nobis impedit amet velit deserunt corporis minima expedita ipsam.</p>
+          )}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus temporibus ipsa nobis pariatur est distinctio doloribus itaque dolore consectetur excepturi! Tenetur nobis impedit amet velit deserunt corporis minima expedita ipsam. <br />
+          {hasMobile && (<span className="text-red-500"> Utilize o controle para nevegar no slide na versão mobile!</span>)}
+          </p>
         </section>
         <section>
           <ControlTypeProjects 

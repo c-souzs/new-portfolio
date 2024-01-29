@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import classNames from "classnames";
+import useScreenMobile from "@/hooks/useScreenMobile";
 
 interface SlideProps {
   children: React.ReactNode
@@ -24,6 +25,8 @@ export default function Slide({ children }: SlideProps) {
   const movement = useRef(0);
   const distanceRefValue = useRef(0);
   const [distance, setDistance] = useState(0);
+
+  const hasMobile = useScreenMobile();
 
   const [moving, setMoving] = useState(false);
 
@@ -142,7 +145,7 @@ export default function Slide({ children }: SlideProps) {
   }, [containerSlide.current, wrapperRef.current])
 
   useEffect(() => {
-    if(wrapperRef.current) {
+    if(wrapperRef.current && !hasMobile) {
       wrapperRef.current.addEventListener("mousedown", onStart);
       wrapperRef.current.addEventListener("mouseup", onEnd);
 
@@ -161,14 +164,14 @@ export default function Slide({ children }: SlideProps) {
         wrapperRef.current.removeEventListener("touchmove", onMoveTouch);
       }
     }
-  }, [wrapperRef.current])
+  }, [wrapperRef.current, hasMobile])
 
   return (
-    <div ref={wrapperRef} role="slider">
+    <div>
       {
         slideElements.length > 0 && (
           <div
-            className="flex gap-x-6 justify-center mb-8 lg:mb-12"
+            className="flex gap-x-6 justify-center mb-8"
             role="navigation"
           >
             {
@@ -176,8 +179,8 @@ export default function Slide({ children }: SlideProps) {
                 return (
                   <button 
                     className={classNames(
-                      "w-3 h-3 rounded-full bg-midnightExpresso shadow-button-active transition-colors hover:bg-skyBlaze focus:bg-skyBlaze focus:outline-none",
-                      {"bg-skyBlaze": index === slideIndexs.current.active}
+                      "w-3 h-3 rounded-full bg-midnightExpresso shadow-button-active transition-all hover:bg-skyBlaze focus:bg-skyBlaze focus:outline-none",
+                      {"bg-skyBlaze ": index === slideIndexs.current.active}
                     )}
                     aria-label="Botão para navegar entre os slides"
                     onClick={() => changeSlideByIndex(index)}
@@ -189,16 +192,18 @@ export default function Slide({ children }: SlideProps) {
           </div>
         )
       }
-      <div 
-        className={classNames(
-          "flex gap-x-1 sm:gap-x-4 md:gap-x-6 lg:gap-x-12",
-          {"transition-transform duration-300": !moving}
-          )} 
-        ref={containerSlide}
-        role="group"
-        style={{transform: `translate3d(${distance}px, 0, 0)`}}
-        >
-        { children }
+      <div ref={wrapperRef} role="slider">
+        <div 
+          className={classNames(
+            "flex gap-x-1 sm:gap-x-4 md:gap-x-6 lg:gap-x-12",
+            {"transition-transform duration-300": !moving}
+            )} 
+          ref={containerSlide}
+          role="group"
+          style={{transform: `translate3d(${distance}px, 0, 0)`}}
+          >
+          { children }
+        </div>
       </div>
     </div>
   )
