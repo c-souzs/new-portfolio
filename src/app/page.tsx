@@ -1,4 +1,3 @@
-import Particle from "@/components/Particle";
 import About from "./sections/About";
 import Introduction from "./sections/Introduction";
 import dynamic from "next/dynamic";

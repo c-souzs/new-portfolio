@@ -21,7 +21,7 @@ export default function Introduction() {
             <span className={classNames("inline-block text-xl text-white", inter.className)}>Caio Souza</span>
             <span className="inline-block font-medium text-xl animate-wave origin-[70% 70%]">👋🏻</span>
           </h3>
-          <h1 className="text-5xl font-semibold text-oceanLight mb-3">Desenvolvedor <br /> Full-stack.</h1>
+          <h1 className="text-4xl font-bold text-oceanLight mb-3 sm:text-5xl sm:font-semibold">Desenvolvedor <br /> Full-stack.</h1>
           <p className={classNames("mb-8 block lg:text-lg text-silveryMoon", roboto.className)}>
             Desenvolvedor Front-end na Agência Zetta, especializado em {' '}
             <span className="text-sunsetOrange">ReactJS, NextJS</span> {' '}
